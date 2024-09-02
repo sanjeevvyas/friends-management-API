@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "74b69018-859a-485a-8b97-fe56d3d365d8",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23835930"
+	},
+	"item": [
+		{
+			"name": "User Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\":\"anderson\",\n    \"lastName\":\"\",\n    \"email\":\"anderson@yopmail.com\",\n    \"password\":\"anderson@123\",\n    \"phone\":1234567890\n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3036/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3036",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"email\":\"adam@yopmail.com\",\n    \"password\": \"adam@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3036/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3036",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3036/user/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3036",
+					"path": [
+						"user",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Friend Request Send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQ0YTAwMjQyNWM0MzM4Yzc2N2ZlZGIiLCJmaXJzdE5hbWUiOiJIYXJwZXIiLCJlbWFpbCI6IkhhcnBlckB5b3BtYWlsLmNvbSIsInBob25lIjoxMjM0NTY3ODkwLCJpYXQiOjE3MjUyMTA3MDR9.SOcAQSS5AmZV45QFqi3uwMlkCl0ar6yQDLw0EItk1Bc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"senderId\":\"66d4a002425c4338c767fedb\",\n    \"reciverId\":\"66d49ebd425c4338c767fec8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3036/request/send-request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3036",
+					"path": [
+						"request",
+						"send-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Friends List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3036/request/change-requset-status?userId=66d46cd64b15c1af670ed7aa&friendId=66d46bdfd408696bb648026d&status=accept",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3036",
+					"path": [
+						"request",
+						"change-requset-status"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "66d46cd64b15c1af670ed7aa"
+						},
+						{
+							"key": "friendId",
+							"value": "66d46bdfd408696bb648026d"
+						},
+						{
+							"key": "status",
+							"value": "accept"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Request Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQ0YTAwMjQyNWM0MzM4Yzc2N2ZlZGIiLCJmaXJzdE5hbWUiOiJIYXJwZXIiLCJlbWFpbCI6IkhhcnBlckB5b3BtYWlsLmNvbSIsInBob25lIjoxMjM0NTY3ODkwLCJpYXQiOjE3MjUyMTA3MDR9.SOcAQSS5AmZV45QFqi3uwMlkCl0ar6yQDLw0EItk1Bc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3036/request/change-requset-status?userId=66d4a002425c4338c767fedb&friendId=66d49ebd425c4338c767fec8&status=accept",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3036",
+					"path": [
+						"request",
+						"change-requset-status"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "66d4a002425c4338c767fedb"
+						},
+						{
+							"key": "friendId",
+							"value": "66d49ebd425c4338c767fec8"
+						},
+						{
+							"key": "status",
+							"value": "accept"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3036/user/change-password?userId=66d49ebd425c4338c767fec8&password=tom@123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3036",
+					"path": [
+						"user",
+						"change-password"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "66d49ebd425c4338c767fec8"
+						},
+						{
+							"key": "password",
+							"value": "tom@123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Profile Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3036/user/update/66d49ebd425c4338c767fec8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3036",
+					"path": [
+						"user",
+						"update",
+						"66d49ebd425c4338c767fec8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
